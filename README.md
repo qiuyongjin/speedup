@@ -1,5 +1,5 @@
 <h1 align="center">
-<b style="color:#28FE14;">Speed</b>up 🐬
+<b>Speed</b>up 🐬
 </h1>
 
 <p align="center">
