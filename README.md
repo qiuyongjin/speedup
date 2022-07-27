@@ -1,9 +1,9 @@
-<p align="center" style="font-size: 32px;">
-<b style="color:#28FE14;">Speed</b>up
-</p>
+<h1 align="center">
+<b style="color:#28FE14;">Speed</b>up 🐬
+</h1>
 
 <p align="center">
-Speed up work 🧑‍💻👩‍💻👨‍💻
+Reduce repetitive work, speed up work 🧑‍💻👩‍💻👨‍💻
 </p>
 
 <p align="center">
