@@ -1,7 +1,7 @@
 import * as path from "path";
 import ora from "ora";
 import clone from "git-clone";
-import {red} from "picocolors";
+import c from "picocolors";
 
 function getRootPath(packageName: string): string {
   return path.resolve(process.cwd(), packageName)
@@ -14,7 +14,7 @@ export function downloadTemplate(repository: string, projectName: string) {
     const path = getRootPath(projectName)
     clone(repo, path, {shallow: true}, function (err: any) {
       if (err) {
-        loading.fail(red('模版下载失败，请重试'))
+        loading.fail(c.red('模版下载失败，请重试'))
         reject(err)
       } else {
         loading.succeed()
