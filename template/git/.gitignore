@@ -1,0 +1,10 @@
+.idea
+.DS_Store
+.hbuilderx
+dist
+node_modules
+keystore
+.pnpm-debug.log
+unpackage
+.env*local
+_*

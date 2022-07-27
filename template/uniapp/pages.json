@@ -1,0 +1,9 @@
+{
+  "pages": [],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "UniApp",
+    "navigationBarBackgroundColor": "#eaeaea",
+    "backgroundColor": "#eaeaea"
+  }
+}

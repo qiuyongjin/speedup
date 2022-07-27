@@ -1,0 +1,15 @@
+<script lang="ts" setup>
+import {onMounted} from 'vue'
+</script>
+
+<template>
+  <view class="{{component-name}}-component">
+    This is a {{component-name}} component.
+  </view>
+</template>
+
+<style lang="scss" scoped>
+.{{component-name}}-component {
+
+}
+</style>

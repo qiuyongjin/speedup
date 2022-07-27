@@ -1,0 +1,15 @@
+<script lang="ts" setup>
+import {onMounted} from 'vue'
+</script>
+
+<template>
+  <view class="{{page-name}}-page">
+    This is a {{page-name}} page.
+  </view>
+</template>
+
+<style lang="scss" scoped>
+.{{page-name}}-page {
+
+}
+</style>

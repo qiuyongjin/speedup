@@ -3,6 +3,10 @@ import ora from "ora";
 import clone from "git-clone";
 import c from "picocolors";
 
+export function hyphenate(str: string) {
+  return str.replace(/\B([A-Z])/g, '-$1').toLowerCase()
+}
+
 function getRootPath(packageName: string): string {
   return path.resolve(process.cwd(), packageName)
 }
