@@ -3,20 +3,25 @@ import questions from "./questions";
 import c from "picocolors";
 import {downloadTemplate, getRootPath} from "../utils";
 
+interface ICreateProjectOptions {
+  projectName: string
+  repository?: string
+}
 
 /**
  * 创建项目
- * @param name {string} 项目名称
+ * @param options
  */
-async function createProject(name: string) {
-  const answer = await questions(name)
+async function createProject(options: ICreateProjectOptions) {
+  const answer = await questions(options.projectName)
   const {projectName} = answer
   if (fs.pathExistsSync(getRootPath(projectName))) {
     console.log(c.red(`${projectName} 文件夹已存在！！！`))
     return
   }
   // 克隆项目
-  downloadTemplate('qiuyongjin/template-npm', projectName).catch(error => {
+  const repository = options.repository || 'qiuyongjin/template-npm'
+  downloadTemplate(repository, projectName).catch(error => {
     console.log(c.red(error.message))
   })
 // 2. 创建 index.js

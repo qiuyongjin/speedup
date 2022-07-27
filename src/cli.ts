@@ -13,7 +13,8 @@ program
 program
   .command('create <project-name>')
   .description('创建新项目')
-  .action((projectName: string) => createProject(projectName))
+  .option('-r,--repository <repository>', '项目模板仓库，举例：qiuyongjin/template-npm')
+  .action((projectName, options) => createProject({projectName, ...options}))
 
 /**
  * uniapp 相关操作
