@@ -1,7 +1,21 @@
 import * as path from "path";
 import ora from "ora";
-import clone from "git-clone";
+// @ts-ignore
+import download from "download-git-repo";
 import c from "picocolors";
+import jiti from 'jiti'
+
+export function tryRequire(id: string, rootDir: string = process.cwd()) {
+  const _require = jiti(rootDir, {interopDefault: true})
+  try {
+    return _require(id)
+  } catch (err: any) {
+    if (err.code !== 'MODULE_NOT_FOUND') {
+      console.error(`Error trying import ${id} from ${rootDir}`, err)
+    }
+    return {}
+  }
+}
 
 export function hyphenate(str: string) {
   return str.replace(/\B([A-Z])/g, '-$1').toLowerCase()
@@ -14,9 +28,8 @@ function getRootPath(packageName: string): string {
 export function downloadTemplate(repository: string, projectName: string) {
   const loading = ora('正在创建项目').start()
   return new Promise((resolve, reject) => {
-    const repo = `git@github.com:${repository}.git`
     const path = getRootPath(projectName)
-    clone(repo, path, {shallow: true}, function (err: any) {
+    download(repository, path, (err: any) => {
       if (err) {
         loading.fail(c.red('模版下载失败，请重试'))
         reject(err)

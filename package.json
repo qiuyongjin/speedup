@@ -28,7 +28,6 @@
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
-    "@types/git-clone": "^0.2.0",
     "@types/inquirer": "^8.2.1",
     "@types/node": "^18.0.6",
     "bumpp": "^8.2.1",
@@ -37,9 +36,10 @@
   },
   "dependencies": {
     "commander": "^9.4.0",
+    "download-git-repo": "^3.0.2",
     "fs-extra": "^10.1.0",
-    "git-clone": "^0.2.0",
     "inquirer": "^9.0.2",
+    "jiti": "^1.14.0",
     "ora": "^6.1.2",
     "picocolors": "^1.0.0"
   }
