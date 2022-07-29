@@ -1,12 +1,10 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { Module } from '@nestjs/common';
+import { <%= moduleName %>Controller } from './<%= moduleNameOfParam %>.controller';
+import { <%= moduleName %>Service } from './<%= moduleNameOfParam %>.service';
 
-@Controller()
-export class <%= moduleName %>Controller {
-constructor(private readonly appService: AppService) {}
-
-@Get()
-getHello(): string {
-return this.appService.getHello();
-}
-}
+@Module({
+imports: [],
+controllers: [<%= moduleName %>Controller],
+providers: [<%= moduleName %>Service],
+})
+export class <%= moduleName %>Module {}

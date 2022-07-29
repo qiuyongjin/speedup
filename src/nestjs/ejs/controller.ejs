@@ -1,7 +1,7 @@
 import { Controller, Get } from '@nestjs/common';
 import { <%= moduleName %>Service } from './<%= moduleNameOfParam %>.service';
 
-@Controller()
+@Controller('<%= moduleNameOfParam %>')
 export class <%= moduleName %>Controller {
 constructor(private readonly <%= moduleNameOfCamel %>Service: <%= moduleName %>Service) {}
 

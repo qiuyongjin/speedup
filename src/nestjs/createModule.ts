@@ -2,17 +2,21 @@ import fs from "fs-extra";
 import ejs from "ejs";
 import {CLI_DIR} from "../utils/filePath";
 import {formatCode} from "../utils";
-import {paramCase} from "change-case";
+import {camelCase, paramCase} from "change-case";
 
-// 创建 xxx.controller.ts 文件
+// 创建 xxx.module.ts 文件
 export default (moduleDir: string, moduleName: string) => {
-  const content = fs.readFileSync(`${CLI_DIR}/src/nestjs/controller.ejs`)
+  const content = fs.readFileSync(`${CLI_DIR}/src/nestjs/ejs/module.ejs`)
   const data = {
-    moduleName
+    moduleName,
+    // 参数风格 xxx-xxx
+    moduleNameOfParam: paramCase(moduleName),
+    // 驼峰风格 xxxXxx
+    moduleNameOfCamel: camelCase(moduleName)
   }
   const processedCode = ejs.render(content.toString(), data)
   const formatFile = formatCode(processedCode)
-  const controllerFilePath = `${moduleDir}/${paramCase(moduleName)}.controller.ts`
+  const controllerFilePath = `${moduleDir}/${paramCase(moduleName)}.module.ts`
   fs.ensureFileSync(controllerFilePath)
   fs.writeFileSync(controllerFilePath, formatFile)
 }

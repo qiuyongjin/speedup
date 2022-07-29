@@ -11,7 +11,7 @@ export default (moduleDir: string, moduleName: string) => {
     moduleName,
     // 参数风格 xx-xx
     moduleNameOfParam: paramCase(moduleName),
-    // 驼峰风格 XxXx
+    // 驼峰风格 xxxXxx
     moduleNameOfCamel: camelCase(moduleName)
   }
   const processedCode = ejs.render(content.toString(), data)

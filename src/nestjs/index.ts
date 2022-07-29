@@ -4,6 +4,7 @@ import {PROJECT_DIR} from "../utils/filePath";
 import createController from "./createController";
 import {paramCase, pascalCase} from "change-case";
 import createService from "./createService";
+import createModule from "./createModule";
 
 let moduleName = ''
 let moduleDir = ''
@@ -24,7 +25,7 @@ function createModuleDir() {
   // 创建 xxx.controller.ts 文件
   createController(moduleDir, moduleName)
   // 创建 xxx.module.ts 文件
-  // fs.ensureFileSync(`${moduleDir}/${moduleName}.module.ts`)
+  createModule(moduleDir, moduleName)
   // 创建 xxx.service.ts 文件
   createService(moduleDir, moduleName)
 
