@@ -39,6 +39,10 @@ function createModuleDir() {
 
 export default async function nestjsAction(options: INestjsActionOption) {
   const {module} = options
+  if (!module) {
+    console.log(c.red('请输入模块名称'))
+    return
+  }
   // 判断目录是否操作
   moduleName = pascalCase(module)
   moduleDir = `${PROJECT_DIR}/src/modules/${paramCase(moduleName)}`
