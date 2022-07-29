@@ -5,6 +5,8 @@ import createController from "./createController";
 import {paramCase, pascalCase} from "change-case";
 import createService from "./createService";
 import createModule from "./createModule";
+import createEntity from "./createEntity";
+import createDto from "./createDto";
 
 let moduleName = ''
 let moduleDir = ''
@@ -29,20 +31,12 @@ function createModuleDir() {
   // 创建 xxx.service.ts 文件
   createService(moduleDir, moduleName)
 
-  createDto()
-  createEntities(moduleDir)
+// 创建dto文件
+  createDto(moduleDir, moduleName)
+  createEntity(moduleDir, moduleName)
   return true
 }
 
-// 创建dto文件
-function createDto() {
-  fs.ensureFileSync(`${moduleDir}/dto/create-${moduleName}.dto.ts`)
-  fs.ensureFileSync(`${moduleDir}/dto/update-${moduleName}.dto.ts`)
-}
-
-function createEntities(moduleDir: string) {
-  fs.ensureFileSync(`${moduleDir}/entities/${moduleName}.entity.ts`)
-}
 
 export default async function nestjsAction(options: INestjsActionOption) {
   const {module} = options
