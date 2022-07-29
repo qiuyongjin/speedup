@@ -7,7 +7,7 @@ import {
   PROJECT_DIR,
   UNIAPP_PAGES_JSON_TEMPLATE,
   UNIAPP_PAGES_JSON
-} from '../utils/filePath'
+} from '../filePath'
 
 const PAGE_DIR = '/src/pages/'
 const pagesJsonFilePath = PROJECT_DIR + '/src/pages.json'

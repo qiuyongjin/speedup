@@ -1,6 +1,6 @@
 import fs from 'fs-extra'
 import c from 'picocolors'
-import {CLI_DIR, PROJECT_DIR} from '../utils/filePath'
+import {CLI_DIR, PROJECT_DIR} from '../filePath'
 import {toHyphenate} from '../utils'
 
 const COMPONENTS_TEMPLATE_PATH = `${CLI_DIR}/template/uniapp/component`

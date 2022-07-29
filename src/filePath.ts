@@ -5,7 +5,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // 当前执行命令的目录
-const CLI_DIR = resolve(__dirname, '../../')
+const CLI_DIR = resolve(__dirname, '..')
 const PROJECT_DIR = process.cwd()
 // 在项目中的 pages.json 文件路径
 const UNIAPP_PAGES_JSON = PROJECT_DIR + '/src/pages.json'

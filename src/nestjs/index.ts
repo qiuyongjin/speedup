@@ -1,6 +1,6 @@
 import fs from "fs-extra";
 import c from "picocolors";
-import {PROJECT_DIR} from "../utils/filePath";
+import {PROJECT_DIR} from "../filePath";
 import createController from "./createController";
 import {paramCase, pascalCase} from "change-case";
 import createService from "./createService";

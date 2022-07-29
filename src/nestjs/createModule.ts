@@ -1,12 +1,12 @@
 import fs from "fs-extra";
 import ejs from "ejs";
-import {CLI_DIR} from "../utils/filePath";
+import {CLI_DIR} from "../filePath";
 import {formatCode} from "../utils";
 import {camelCase, paramCase} from "change-case";
 
 // 创建 xxx.module.ts 文件
 export default (moduleDir: string, moduleName: string) => {
-  const content = fs.readFileSync(`${CLI_DIR}/src/nestjs/ejs/module.ejs`)
+  const content = fs.readFileSync(`${CLI_DIR}/template/ejs/nestjs/module.ejs`)
   const data = {
     moduleName,
     // 参数风格 xxx-xxx
