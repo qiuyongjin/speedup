@@ -17,13 +17,12 @@ interface INestjsActionOption {
 }
 
 function createModuleDir() {
-  console.log(moduleDir)
   // 判断模块是否存在
   if (fs.pathExistsSync(moduleDir)) {
     console.log(c.red(`${moduleName} 模块已存在`))
     return false
   }
-  console.log('正在创建模块...')
+  console.log(`【${moduleName}】:${c.cyan('正在创建模块')}`)
   // 创建 xxx.controller.ts 文件
   createController(moduleDir, moduleName)
   // 创建 xxx.module.ts 文件
@@ -44,6 +43,7 @@ export default async function nestjsAction(options: INestjsActionOption) {
   moduleName = pascalCase(module)
   moduleDir = `${PROJECT_DIR}/src/modules/${paramCase(moduleName)}`
   if (createModuleDir()) {
-    console.log('模块创建完成')
+    console.log(`【${moduleName}】:${c.cyan('模块创建完成')}`)
+    console.log(c.cyan(moduleDir))
   }
 }
