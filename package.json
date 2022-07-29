@@ -1,7 +1,7 @@
 {
   "name": "speedup",
   "type": "module",
-  "version": "0.0.1-beta.6",
+  "version": "0.0.1-beta.7",
   "description": "speedup",
   "main": "dist/index.mjs",
   "module": "dist/index.mjs",
