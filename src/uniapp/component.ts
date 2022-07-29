@@ -1,7 +1,7 @@
 import fs from 'fs-extra'
 import c from 'picocolors'
 import {CLI_DIR, PROJECT_DIR} from '../utils/filePath'
-import {hyphenate} from '../utils'
+import {toHyphenate} from '../utils'
 
 const COMPONENTS_TEMPLATE_PATH = `${CLI_DIR}/template/uniapp/component`
 const COMPONENTS_PATH = `${PROJECT_DIR}/src/components`
@@ -17,7 +17,7 @@ export async function createComponent(componentName: string) {
     return
   }
   const template = fs.readFileSync(COMPONENTS_TEMPLATE_PATH, 'utf-8')
-    .replaceAll('{{component-name}}', hyphenate(componentName))
+    .replaceAll('{{component-name}}', toHyphenate(componentName))
   fs.writeFileSync(componentFilePath, template)
   console.log(`组件创建完成: ${componentFilePath}`)
 }

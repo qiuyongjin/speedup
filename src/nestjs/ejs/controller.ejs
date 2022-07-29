@@ -1,0 +1,12 @@
+import { Controller, Get } from '@nestjs/common';
+import { <%= moduleName %>Service } from './<%= moduleNameOfParam %>.service';
+
+@Controller()
+export class <%= moduleName %>Controller {
+constructor(private readonly <%= moduleNameOfCamel %>Service: <%= moduleName %>Service) {}
+
+@Get()
+getHello(): string {
+return this.<%= moduleNameOfCamel %>Service.getHello();
+}
+}

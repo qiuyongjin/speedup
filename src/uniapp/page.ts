@@ -1,7 +1,7 @@
 import fs from 'fs-extra'
 import c from 'picocolors'
 import inquirer from 'inquirer'
-import {hyphenate} from '../utils'
+import {toHyphenate} from '../utils'
 import {
   CLI_DIR,
   PROJECT_DIR,
@@ -77,7 +77,7 @@ export async function createPage(pageName: string) {
     return
   }
   fs.mkdirpSync(pageDir)
-  const templatePage = fs.readFileSync(`${CLI_DIR}/template/uniapp/page`, 'utf8').replaceAll('{{page-name}}', hyphenate(PAGE_NAME))
+  const templatePage = fs.readFileSync(`${CLI_DIR}/template/uniapp/page`, 'utf8').replaceAll('{{page-name}}', toHyphenate(PAGE_NAME))
   fs.writeFileSync(file, templatePage)
   console.log(`创建页面完成：${file}`)
   updatePagesJsonFile()

@@ -27,20 +27,25 @@
     "url": "git+https://github.com/qiuyongjin/speedup.git"
   },
   "devDependencies": {
+    "@types/ejs": "^3.1.1",
     "@types/fs-extra": "^9.0.13",
     "@types/inquirer": "^8.2.1",
     "@types/node": "^18.0.6",
+    "@types/prettier": "^2.6.4",
     "bumpp": "^8.2.1",
     "typescript": "^4.7.4",
     "unbuild": "^0.7.6"
   },
   "dependencies": {
+    "change-case": "^4.1.2",
     "commander": "^9.4.0",
     "download-git-repo": "^3.0.2",
+    "ejs": "^3.1.8",
     "fs-extra": "^10.1.0",
     "inquirer": "^9.0.2",
     "jiti": "^1.14.0",
     "ora": "^6.1.2",
-    "picocolors": "^1.0.0"
+    "picocolors": "^1.0.0",
+    "prettier": "^2.7.1"
   }
 }
