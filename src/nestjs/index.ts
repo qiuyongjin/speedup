@@ -11,6 +11,8 @@ import createDto from "./createDto";
 let moduleName = ''
 let moduleDir = ''
 
+const allModulesPath = `${PROJECT_DIR}/src/all-module.ts`
+
 interface INestjsActionOption {
   remove: boolean,
   module: string,
@@ -36,6 +38,15 @@ function createModuleDir() {
   return true
 }
 
+function autoImportModule(moduleName: string) {
+  const moduleNameParamCase = paramCase(moduleName)
+  let module = fs.readFileSync(allModulesPath, 'utf-8')
+  const importModuleName = `${moduleName}Module`
+  const addModule = `import { ${importModuleName} } from './modules/${moduleNameParamCase}/${moduleNameParamCase}.module';`
+  module = module.replace('export default [', `export default [${importModuleName}, `)
+  const newModule = `${addModule}\n${module}`
+  fs.writeFileSync(allModulesPath, newModule)
+}
 
 export default async function nestjsAction(options: INestjsActionOption) {
   const {module} = options
@@ -45,6 +56,7 @@ export default async function nestjsAction(options: INestjsActionOption) {
   }
   // 判断目录是否操作
   moduleName = pascalCase(module)
+  autoImportModule(moduleName)
   moduleDir = `${PROJECT_DIR}/src/modules/${paramCase(moduleName)}`
   if (createModuleDir()) {
     console.log(`【${moduleName}】:${c.cyan('模块创建完成')}`)
