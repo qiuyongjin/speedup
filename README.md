@@ -19,12 +19,23 @@ npm i -g speedup
 ## Use
 
 ```bash
+# Creat project
 sped create <project-name>
+
+# NestJS adds CURD
+sped nest -m<module-name>
 ```
 
 ## Features
+### Create project
+- [x] Nestjs
+- [x] Node CLI
+- [ ] Vue
+- [ ] React
+- [ ] UniApp
 
-- [x] Create nodejs cli project.
+### Nestjs
+- [x] Quickly generate CRUD templates for NestJS projects
 
 ## License
 
