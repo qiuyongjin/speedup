@@ -35,7 +35,7 @@ sped nest -m<module-name>
 - [ ] UniApp
 
 ### Nestjs
-- [x] Quickly generate CRUD templates for NestJS projects
+- [x] Quickly generate CRUD templates
 
 ## License
 
