@@ -11,7 +11,7 @@ import createDto from "./createDto";
 let moduleName = ''
 let moduleDir = ''
 
-const allModulesPath = `${PROJECT_DIR}/src/all-module.ts`
+const allModulesPath = `${PROJECT_DIR}/src/modules.ts`
 
 interface INestjsActionOption {
   remove: boolean,
